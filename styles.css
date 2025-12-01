@@ -1,87 +1,157 @@
+:root{
+  --bg: #1d1e1e;
+  --text: #e4e7e7;
+  --accent: #00bcd4;
+  --muted: #9aa0a6;
+  --gap: 1.5rem;
+  --nav-padding: clamp(0.6rem, 2.5vw, 1.2rem) clamp(1rem, 4vw, 3rem);
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Reset */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: var(--font-sans);
 }
-html,
-body {
+html, body {
   height: 100%;
   width: 100%;
-}
-body {
-  height: 100%;
-  width: 100%;
+  background: var(--bg);
+  color: var(--text);
 }
 
+/* Page container */
 .page {
-  height: 100%;
+  min-height: 100%;
   width: 100%;
-  background-color: #1d1e1e;
+  background-color: var(--bg);
+  color: var(--text);
 }
 
+/* NAV layout */
 nav {
   width: 100%;
-  padding: 0.8rem 3rem;
+  padding: var(--nav-padding);
   display: flex;
   align-items: center;
-  justify-content: center;
-  /* background-color: aquamarine; */
+  justify-content: space-between;
+  gap: var(--gap);
 }
 
+/* Left section */
 nav > .left {
-  height: 100%;
-  padding: 0rem 4rem;
-  width: 100%;
-  height: 10vh;
   display: flex;
-  align-items: start;
-  justify-content: center;
-}
-
-#moon{
-  display: none;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 nav > .left > h2 {
-  color: #e4e7e7;
-  font-size: 1.6rem;
+  color: var(--text);
+  font-size: 1.25rem;
   font-weight: 400;
   font-family: monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 nav > .left > h2 > span > i {
   font-size: 1rem;
-  margin-bottom: 90px;
+  margin-left: 0.4rem;
+  vertical-align: middle;
 }
 
+/* Right section */
 nav > .right {
- 
-  width: 100%;
-  height: 10vh;
   display: flex;
-  align-items: start;
-  justify-content: center;
-  padding: 0.8rem 4rem;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1 1 auto;
 }
 
+/* Menu list */
 nav > .right > ul {
   list-style: none;
+  display: flex;
+  gap: var(--gap);
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
 }
 
-nav > .right > ul,
-li > a {
-  color: #e4e7e7;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
+nav > .right > ul > li {
+  display: block;
+}
+
+nav > .right > ul > li > a {
+  color: var(--text);
   text-decoration: none;
   font-size: 0.95rem;
   font-weight: 300;
+  transition: color 0.15s ease, font-weight 0.15s ease;
+  display: inline-block;
+  padding: 0.25rem 0.35rem;
 }
 
-nav > .right > ul > li:hover {
+/* Hover / focus */
+nav > .right > ul > li:hover > a,
+nav > .right > ul > li > a:focus {
+  color: var(--accent);
+  font-weight: 600;
   cursor: pointer;
-  color: black;
-  font-weight: bold;
+}
+
+/* Optional moon icon: show/hide as needed */
+#moon {
+  display: inline-block; /* change to none if you want hidden by default */
+  margin-left: 0.4rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.6rem;
+    padding: 0.6rem 1rem;
+  }
+
+  nav > .left,
+  nav > .right {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  nav > .right > ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    width: 100%;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(255,255,255,0.03);
+  }
+
+  nav > .left > h2 {
+    font-size: 1.1rem;
+  }
+
+  nav > .right > ul > li > a {
+    font-size: 1rem;
+  }
+}
+
+/* Small tweaks for very small screens */
+@media (max-width: 420px) {
+  nav > .left > h2 {
+    font-size: 1rem;
+  }
+  nav > .right > ul > li > a {
+    font-size: 0.95rem;
+    padding: 0.25rem;
+  }
 }
