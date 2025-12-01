@@ -1,14 +1,27 @@
-const moon = document.getElementById("moon");
-const sun = document.getElementById("sun");
+document.addEventListener("DOMContentLoaded", () => {
+  const moon = document.getElementById("moon");
+  const sun = document.getElementById("sun");
 
-sun.addEventListener("click", () => {
-  document.body.classList.add("darkmode");
-  sun.style.display = "none";
-  moon.style.display = "block";
-});
+  if (!sun || !moon) return;
 
-moon.addEventListener("click", () => {
-  document.body.classList.remove("darkmode");
-  moon.style.display = "none";
-  sun.style.display = "block";
+  // set initial visibility based on current mode
+  if (document.body.classList.contains("darkmode")) {
+    sun.style.display = "none";
+    moon.style.display = "block";
+  } else {
+    moon.style.display = "none";
+    sun.style.display = "block";
+  }
+
+  sun.addEventListener("click", () => {
+    document.body.classList.add("darkmode");
+    sun.style.display = "none";
+    moon.style.display = "block";
+  });
+
+  moon.addEventListener("click", () => {
+    document.body.classList.remove("darkmode");
+    moon.style.display = "none";
+    sun.style.display = "block";
+  });
 });
