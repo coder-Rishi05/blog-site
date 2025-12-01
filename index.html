@@ -4,58 +4,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rishi — Digital Garden</title>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <div class="page">
-        <nav>
-            <!-- Navigation Bar  -->
-            <div class="left">
-                <h2>Rishi
-                    <span>
-                        <i id="sun" class="ri-sun-line"></i>
-                        <!-- moon icon for dark mode -->
-                        <i id="moon" class="ri-moon-line"></i>
-                        | </span>
-                </h2>
-            </div>
-            <div class="right">
-                <ul>
-                    <li><a href="#archive">archive</a></li>
-                    <li><a href="#tag">tag</a></li>
-                    <li><a href="#search">Services</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-        <div class="page1">
+        <header>
+            <nav aria-label="Main navigation">
+                <!-- Navigation Bar  -->
+                <div class="left">
+                    <h2>Rishi
+                        <span class="theme-toggle" aria-hidden="true">
+                            <i id="sun" class="ri-sun-line" title="Light mode"></i>
+                            <!-- moon icon for dark mode -->
+                            <i id="moon" class="ri-moon-line" title="Dark mode"></i>
+                        </span>
+                    </h2>
+                </div>
+                <div class="right">
+                    <ul>
+                        <li><a href="#archive">Archive</a></li>
+                        <li><a href="#tag">Tag</a></li>
+                        <li><a href="#search">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
 
-            <main>
+        <main class="page1">
+            <section class="hero">
                 <h1>Hello world, I’m Rishi! 👨🏻‍💻</h1>
                 <p>Welcome to my digital garden where I document my learnings as a Software Engineer.</p>
-                <div class="icons">
+                <div class="icons" aria-label="Social links">
                     <ul>
                         <li>
-                            <a href="#"><i class="ri-github-fill"></i></a>
+                            <a href="#" aria-label="GitHub"><i class="ri-github-fill"></i></a>
                         </li>
                         <li>
-                            <a href="#"><i class="ri-github-fill"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="ri-linkedin-box-fill"></i></a>
                         </li>
                         <li>
-                            <a href="#"><i class="ri-github-fill"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="ri-twitter-fill"></i></a>
                         </li>
                         <li>
-                            <a href="#"><i class="ri-github-fill"></i></a>
+                            <a href="#" aria-label="Email"><i class="ri-mail-fill"></i></a>
                         </li>
                     </ul>
                 </div>
-            </main>
-        </div>
-
-
+            </section>
+        </main>
     </div>
 
     <script src="script.js"></script>
