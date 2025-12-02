@@ -28,6 +28,7 @@ html, body {
   width: 100%;
   background-color: var(--bg);
   color: var(--text);
+ 
 }
 
 /* NAV layout */
@@ -42,6 +43,7 @@ nav {
 
 /* Left section */
 nav > .left {
+  /* background-color: aquamarine; */
   display: flex;
   align-items: center;
   gap: 0.75rem;
